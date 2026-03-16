@@ -10,16 +10,16 @@ class Annie < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/anyshift-engineering/annie-cli/releases/download/v0.5.0/annie-0.5.0-darwin-amd64.tar.gz"
-      sha256 "0a4924da05bbe28958ca91b980433c07ba97c726d58c24695db7ba9a01affbab"
+      url "https://annie-cli.anyshift.io/releases/0.5.0/annie-0.5.0-darwin-amd64.tar.gz"
+      sha256 "54a892d71fcf24efc05b41a0bb2843eef9527479ed98f5d7b30a5a570d825f04"
 
       define_method(:install) do
         bin.install "annie"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/anyshift-engineering/annie-cli/releases/download/v0.5.0/annie-0.5.0-darwin-arm64.tar.gz"
-      sha256 "d86efd580097678a9fe928a0447a9437bedad9eab61d3556e8c3484fe163a5a2"
+      url "https://annie-cli.anyshift.io/releases/0.5.0/annie-0.5.0-darwin-arm64.tar.gz"
+      sha256 "e56a9168732e881933bf63d49b9c29d7e4823fb85a63d251a528c0b986c3e621"
 
       define_method(:install) do
         bin.install "annie"
@@ -29,15 +29,15 @@ class Annie < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/anyshift-engineering/annie-cli/releases/download/v0.5.0/annie-0.5.0-linux-amd64.tar.gz"
-      sha256 "4389e7e3860f75c8a1542c6c902c37208e74df6c8667f80a69428488e0cfe6e3"
+      url "https://annie-cli.anyshift.io/releases/0.5.0/annie-0.5.0-linux-amd64.tar.gz"
+      sha256 "06c34d764fe7ce8e309e8c75639b27e0611b665ff7d0ab7265e730e94168bfb3"
       define_method(:install) do
         bin.install "annie"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/anyshift-engineering/annie-cli/releases/download/v0.5.0/annie-0.5.0-linux-arm64.tar.gz"
-      sha256 "10da5dc74a9880b26e7290b312a4769dc58ac9783b3049eb829dc1329205936a"
+      url "https://annie-cli.anyshift.io/releases/0.5.0/annie-0.5.0-linux-arm64.tar.gz"
+      sha256 "bc63072c14ebc5ad0f833964b53aee82ffdae5f9cbdf0a4f6b908144a8e68712"
       define_method(:install) do
         bin.install "annie"
       end
