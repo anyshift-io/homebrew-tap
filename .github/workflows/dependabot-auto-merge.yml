@@ -1,0 +1,10 @@
+name: Dependabot Auto-Merge
+
+on:
+  pull_request:
+
+jobs:
+  auto-merge:
+    uses: anyshift-io/custom_github_actions/.github/workflows/reusable-dependabot-auto-merge.yml@main
+    secrets: inherit
+
