@@ -3,6 +3,10 @@ name: Dependabot Auto-Merge
 on:
   pull_request:
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   auto-merge:
     uses: anyshift-io/custom_github_actions/.github/workflows/reusable-dependabot-auto-merge.yml@main
