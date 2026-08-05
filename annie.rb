@@ -11,7 +11,7 @@ class Annie < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://annie-cli.anyshift.io/releases/0.8.24/annie-0.8.24-darwin-amd64.tar.gz"
-      sha256 "262ce8f2bb1b05e9f882130c8c3a702e99c8c85ca3bdc489afdfd4952698f483"
+      sha256 "7524d829ca18afdc91ea1d4a65e133ba77b31f31b3a4898cd963633e5f63bbd6"
 
       define_method(:install) do
         bin.install "annie"
@@ -19,7 +19,7 @@ class Annie < Formula
     end
     if Hardware::CPU.arm?
       url "https://annie-cli.anyshift.io/releases/0.8.24/annie-0.8.24-darwin-arm64.tar.gz"
-      sha256 "b074efa5677ed3e01e2a15cc3261a884da0667dafa1e109d6b708f2e67ea5bba"
+      sha256 "5bdba6a4cb22771dc60024b0eb24ca9944b08c8280837cf83968a26b0365f6db"
 
       define_method(:install) do
         bin.install "annie"
@@ -30,14 +30,14 @@ class Annie < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://annie-cli.anyshift.io/releases/0.8.24/annie-0.8.24-linux-amd64.tar.gz"
-      sha256 "c8de9ffec719a822fa2a6ef2082d24452e9ec4049498378839a094420e5b3957"
+      sha256 "03e0690d3e90748ed6009fffe101b2bdbdb20a3b01600bc3bee3ecb625e587ac"
       define_method(:install) do
         bin.install "annie"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://annie-cli.anyshift.io/releases/0.8.24/annie-0.8.24-linux-arm64.tar.gz"
-      sha256 "22ebdf485f3790d9ad14a5fafa9fd8f91cd68583fef7da0cd81d1c092fcf0806"
+      sha256 "0a88ce518223e2226bebecd136f0b463f793bd3ad2ddbf71a3ac7e00bd7caad9"
       define_method(:install) do
         bin.install "annie"
       end
