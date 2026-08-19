@@ -5,21 +5,21 @@
 class Annie < Formula
   desc "AI-powered infrastructure observability CLI"
   homepage "https://anyshift.io"
-  version "0.8.45"
+  version "0.8.46"
   license "Proprietary"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://annie-cli.anyshift.io/releases/0.8.45/annie-0.8.45-darwin-amd64.tar.gz"
-      sha256 "db86369742fc77f5ca92b0e718cdcbc47db700b1b7eac7e21368120849d8674c"
+      url "https://annie-cli.anyshift.io/releases/0.8.46/annie-0.8.46-darwin-amd64.tar.gz"
+      sha256 "9d0cb57da89cef035e9c674e9dba2d2e019c362a2ee9d62dbf502804b53139b6"
 
       define_method(:install) do
         bin.install "annie"
       end
     end
     if Hardware::CPU.arm?
-      url "https://annie-cli.anyshift.io/releases/0.8.45/annie-0.8.45-darwin-arm64.tar.gz"
-      sha256 "8f54e37a553ba467ed6a4d2ba3b4858fd7ea8d03ded2f8fa3690fa491cfb6754"
+      url "https://annie-cli.anyshift.io/releases/0.8.46/annie-0.8.46-darwin-arm64.tar.gz"
+      sha256 "5028a288abfbb06324fcbf41a90137afe9f673dd464d722e6ed77a28eada2671"
 
       define_method(:install) do
         bin.install "annie"
@@ -29,15 +29,15 @@ class Annie < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://annie-cli.anyshift.io/releases/0.8.45/annie-0.8.45-linux-amd64.tar.gz"
-      sha256 "e7e11c43e2191c468caa4f8ca5c619c6d52ab1eee59d288c8a5fcd7201d572eb"
+      url "https://annie-cli.anyshift.io/releases/0.8.46/annie-0.8.46-linux-amd64.tar.gz"
+      sha256 "5e896f0238a0477933bf233432ea31755e63585662f43d095e554967e0de1636"
       define_method(:install) do
         bin.install "annie"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://annie-cli.anyshift.io/releases/0.8.45/annie-0.8.45-linux-arm64.tar.gz"
-      sha256 "c76e3c528df9ea59783c81d03cfe64fb6ea2b6097bfccc8a51bfb064637bdf0e"
+      url "https://annie-cli.anyshift.io/releases/0.8.46/annie-0.8.46-linux-arm64.tar.gz"
+      sha256 "9fad22f1b5f33d8bd8aa347dce01289b0b5819bb16be18cb074bf499e3b1f857"
       define_method(:install) do
         bin.install "annie"
       end
