@@ -25,7 +25,7 @@ jobs:
     # group sets allows_public_repositories=false, so jobs labeled
     # self-hosted/linux/x64/docker stay queued forever and never get picked up.
     # Do not reintroduce USE_GITHUB_HOSTED or self-hosted labels here.
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.USE_GITHUB_HOSTED == 'true' && 'ubuntu-latest' || fromJSON('["self-hosted","linux","x64","docker"]') }}
     name: PR Review Slack Notify
     permissions:
       contents: read

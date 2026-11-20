@@ -20,7 +20,7 @@ concurrency:
 jobs:
   status_pending:
     if: ${{ github.event_name == 'workflow_dispatch' }}
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.USE_GITHUB_HOSTED == 'true' && 'ubuntu-latest' || fromJSON('["self-hosted","linux","x64","docker"]') }}
     permissions:
       statuses: write
       pull-requests: read
@@ -50,7 +50,7 @@ jobs:
   validate:
     needs: status_pending
     if: ${{ !cancelled() && (needs.status_pending.result == 'success' || needs.status_pending.result == 'skipped') }}
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.USE_GITHUB_HOSTED == 'true' && 'ubuntu-latest' || fromJSON('["self-hosted","linux","x64","docker"]') }}
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
@@ -62,7 +62,7 @@ jobs:
   publish_status:
     needs: [status_pending, validate]
     if: ${{ always() && needs.status_pending.result == 'success' }}
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.USE_GITHUB_HOSTED == 'true' && 'ubuntu-latest' || fromJSON('["self-hosted","linux","x64","docker"]') }}
     permissions:
       statuses: write
     steps:
